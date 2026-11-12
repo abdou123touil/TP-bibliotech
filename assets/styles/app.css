@@ -1,3 +1,375 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: skyblue;
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #252b36;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+
+.site-header {
+    background: #263b5a;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.site-header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* CATALOGUE */
+
+.catalogue-page {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.catalogue-heading {
+    margin-bottom: 30px;
+}
+
+.catalogue-heading h1 {
+    font-size: 32px;
+    color: #263b5a;
+}
+
+.catalogue-heading p {
+    color: #687386;
+}
+
+.book-counter {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #263b5a;
+}
+
+/* FILTRES */
+
+.filter-form {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: end;
+    margin-bottom: 35px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 170px;
+}
+
+.filter-group label {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.filter-group select {
+    padding: 11px;
+    border: 1px solid #d5dbe5;
+    border-radius: 6px;
+    background: white;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-filter,
+.btn-reset {
+    padding: 11px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-filter {
+    background: #263b5a;
+    color: white;
+    border: none;
+}
+
+.btn-reset {
+    background: #e9edf3;
+    color: #263b5a;
+}
+
+/* GRILLE */
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.book-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    transition: transform 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+}
+
+.book-cover {
+    height: 270px;
+    background: #e9edf3;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 55px;
+}
+
+.book-info {
+    padding: 18px;
+}
+
+.book-genre {
+    color: #526b91;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.book-info h2 {
+    font-size: 19px;
+    margin: 8px 0;
+}
+
+.book-author,
+.book-year {
+    color: #687386;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* DISPONIBILITE */
+
+.availability {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.available {
+    background: #d9f5e3;
+    color: #168044;
+}
+
+.unavailable {
+    background: #ffe0e0;
+    color: #c62828;
+}
+
+.empty-catalogue {
+    padding: 30px;
+    text-align: center;
+    color: #687386;
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: #263b5a;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-actions {
+        flex-wrap: wrap;
+    }
+
+    .catalogue-heading h1 {
+        font-size: 26px;
+    }
+}
+
+/* Fil d'Ariane */
+.breadcrumb {
+    margin-bottom: 25px;
+    color: #687386;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #263b5a;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Fiche détaillée */
+.book-detail {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    gap: 35px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    margin-bottom: 40px;
+}
+
+.detail-cover {
+    min-height: 300px;
+    background: #e9edf3;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.detail-cover img {
+    width: 100%;
+    height: 100%;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.detail-info h1 {
+    color: #263b5a;
+    margin: 12px 0 18px;
+}
+
+.detail-info p {
+    margin-bottom: 12px;
+}
+
+.detail-info button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* Tableau des emprunts */
+.loans-section,
+.same-genre-section {
+    margin-bottom: 45px;
+}
+
+.loans-section h2,
+.same-genre-section h2 {
+    color: #263b5a;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+}
+
+.loans-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.loans-table th,
+.loans-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e9edf3;
+}
+
+.loans-table th {
+    background: #263b5a;
+    color: white;
+}
+
+.book-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+}
+
+.book-card-link:hover h2 {
+    color: #526b91;
+}
+
+@media (max-width: 700px) {
+    .book-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-cover {
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.site-header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.site-header nav a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.site-header nav a:hover,
+.site-header nav a.actif {
+    border-bottom-color: white;
+    font-weight: bold;
 }

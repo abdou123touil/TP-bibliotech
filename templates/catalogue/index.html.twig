@@ -1,0 +1,120 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue - Bibliotech{% endblock %}
+
+{% block body %}
+
+<div class="container catalogue-page">
+
+    <section class="catalogue-heading">
+        <h1>Notre catalogue</h1>
+        <p>Découvrez les livres disponibles dans notre médiathèque.</p>
+
+        <div class="book-counter">
+            {{ nombreLivres }}
+            {{ nombreLivres > 1 ? 'livres' : 'livre' }}
+        </div>
+    </section>
+
+   
+
+    <form method="get"
+          action="{{ path('app_catalogue') }}"
+          class="filter-form">
+
+        <div class="filter-group">
+            <label for="genre">Genre</label>
+
+            <select name="genre" id="genre">
+                <option value="">Tous les genres</option>
+
+                {% for g in genres %}
+                    <option value="{{ g }}"
+                        {{ g == filtres.genre ? 'selected' : '' }}>
+                        {{ g }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="auteur">Auteur</label>
+
+            <select name="auteur" id="auteur">
+                <option value="">Tous les auteurs</option>
+
+                {% for a in auteurs %}
+                    <option value="{{ a }}"
+                        {{ a == filtres.auteur ? 'selected' : '' }}>
+                        {{ a }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="tri">Trier par</label>
+
+            <select name="tri" id="tri">
+                <option value="titre_asc"
+                    {{ filtres.tri == 'titre_asc' ? 'selected' : '' }}>
+                    Titre A-Z
+                </option>
+
+                <option value="titre_desc"
+                    {{ filtres.tri == 'titre_desc' ? 'selected' : '' }}>
+                    Titre Z-A
+                </option>
+
+                <option value="annee_asc"
+                    {{ filtres.tri == 'annee_asc' ? 'selected' : '' }}>
+                    Année : ancienne à récente
+                </option>
+
+                <option value="annee_desc"
+                    {{ filtres.tri == 'annee_desc' ? 'selected' : '' }}>
+                    Année : récente à ancienne
+                </option>
+
+                <option value="auteur_asc"
+                    {{ filtres.tri == 'auteur_asc' ? 'selected' : '' }}>
+                    Auteur A-Z
+                </option>
+            </select>
+        </div>
+
+        <div class="filter-actions">
+            <button type="submit" class="btn-filter">
+                Filtrer
+            </button>
+
+            <a href="{{ path('app_catalogue') }}"
+               class="btn-reset">
+                Réinitialiser
+            </a>
+        </div>
+
+    </form>
+
+    
+
+    
+<section class="books-grid">
+    {% for item in catalogue %}
+        {% include 'livre/_carte.html.twig' with {
+            livre: item.livre,
+            disponibles: item.disponibles,
+            total: item.total
+        } %}
+    {% else %}
+        <p class="empty-catalogue">
+            Aucun livre ne correspond à votre recherche.
+        </p>
+    {% endfor %}
+</section>
+
+
+</div>
+
+{% endblock %}

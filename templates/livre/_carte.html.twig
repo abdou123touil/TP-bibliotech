@@ -1,0 +1,31 @@
+
+<article class="book-card">
+    <a href="{{ path('app_livre', {id: livre.id}) }}" class="book-card-link">
+        <div class="book-cover">
+            {% if livre.couverture %}
+                <img src="{{ livre.couverture }}"
+                     alt="Couverture de {{ livre.titre }}">
+            {% else %}
+                <div class="no-cover">📚</div>
+            {% endif %}
+        </div>
+
+        <div class="book-info">
+            <span class="book-genre">{{ livre.genre }}</span>
+            <h2>{{ livre.titre }}</h2>
+            <p class="book-author">{{ livre.auteur }}</p>
+            <p class="book-year">Année : {{ livre.annee }}</p>
+        </div>
+    </a>
+    {% if disponibles is defined and total is defined %}
+    {% if disponibles > 0 %}
+        <span class="availability available">
+            {{ disponibles }} / {{ total }} disponibles
+        </span>
+    {% else %}
+        <span class="availability unavailable">
+            Indisponible
+        </span>
+    {% endif %}
+{% endif %}
+</article>

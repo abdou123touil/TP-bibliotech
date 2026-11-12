@@ -1,0 +1,27 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Les plus empruntés - Bibliotech{% endblock %}
+
+{% block body %}
+<div class="container catalogue-page">
+
+    <section class="catalogue-heading">
+        <h1>Les plus empruntés</h1>
+        <p>Découvrez les cinq livres qui ont rencontré le plus de succès auprès de nos adhérents.</p>
+    </section>
+
+    <section class="books-grid">
+        {% for livre in livres %}
+            {% include 'livre/_carte.html.twig' with {
+                livre: livre
+            } %}
+        {% else %}
+            <p class="empty-catalogue">
+                Aucun emprunt n'est enregistré pour le moment.
+            </p>
+        {% endfor %}
+    </section>
+
+</div>
+{% endblock %}
