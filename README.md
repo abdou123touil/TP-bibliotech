@@ -88,12 +88,12 @@ bibliotech/
 │   ├── catalogue/
 │   │   └── index.html.twig
 │   ├── livre/
-│   │   ├── show.html.twig
+│   │   ├── index.html.twig
 │   │   └── _carte.html.twig
 │   ├── populaires/
 │   │   └── index.html.twig
 │   └── adherent/
-│       └── show.html.twig
+│       └── index.html.twig
 ├── .env
 ├── .env.local
 ├── composer.json
