@@ -2,7 +2,16 @@
 
 **Bibliotech** est une application web de gestion de médiathèque développée avec **Symfony 7.4**. Elle permet de consulter un catalogue de livres, de suivre les emprunts et de retrouver les informations des adhérents.
 
-## ✨ Fonctionnalités
+## MCD :
+<img width="861" height="532" alt="image" src="https://github.com/user-attachments/assets/2191cebf-98f0-454d-8185-4c88555a42bc" />
+
+
+## MLD :
+<img width="861" height="753" alt="image" src="https://github.com/user-attachments/assets/06e8c3ef-ba69-4d68-ba00-1e19f365c746" />
+
+
+
+##  Fonctionnalités
 
 ### 1. Catalogue des livres
 - Affichage des livres enregistrés en base de données.
@@ -52,7 +61,7 @@
 | Faker | Génération de données fictives |
 | Symfony Fixtures | Chargement des données de test |
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```text
 bibliotech/
@@ -91,12 +100,7 @@ bibliotech/
 └── README.md
 ```
 
-## MCD :
-<img width="861" height="532" alt="image" src="https://github.com/user-attachments/assets/2191cebf-98f0-454d-8185-4c88555a42bc" />
 
-
-## MLD :
-<img width="861" height="753" alt="image" src="https://github.com/user-attachments/assets/06e8c3ef-ba69-4d68-ba00-1e19f365c746" />
 
 
 ##  Installation
