@@ -37,8 +37,8 @@ class CatalogueController extends AbstractController
         $tris = [
             'titre_asc' => ['l.titre', 'ASC'],
             'titre_desc' => ['l.titre', 'DESC'],
-            'annee_asc' => ['l.anneeParution', 'ASC'],
-            'annee_desc' => ['l.anneeParution', 'DESC'],
+            'annee_asc' => ['l.annee', 'ASC'],
+            'annee_desc' => ['l.annee', 'DESC'],
             'auteur_asc' => ['l.auteur', 'ASC'],
         ];
 
